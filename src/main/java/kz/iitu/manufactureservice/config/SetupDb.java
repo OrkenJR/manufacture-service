@@ -1,8 +1,12 @@
 package kz.iitu.manufactureservice.config;
 
+import kz.iitu.manufactureservice.model.MarketMaterial;
 import kz.iitu.manufactureservice.model.Material;
 import kz.iitu.manufactureservice.model.MaterialWarehouse;
 import kz.iitu.manufactureservice.model.Warehouse;
+import kz.iitu.manufactureservice.model.enums.Country;
+import kz.iitu.manufactureservice.model.enums.Icon;
+import kz.iitu.manufactureservice.repository.MarketMaterialRepository;
 import kz.iitu.manufactureservice.repository.MatWarRepository;
 import kz.iitu.manufactureservice.repository.MaterialRepository;
 import kz.iitu.manufactureservice.repository.WarehouseRepository;
@@ -23,32 +27,40 @@ public class SetupDb implements ApplicationListener<ContextRefreshedEvent> {
     private final MaterialRepository materialRepository;
     private final WarehouseRepository warehouseRepository;
     private final MatWarRepository matWarRepository;
+    private final MarketMaterialRepository marketMaterialRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
-        matWarRepository.deleteAll();
-        materialRepository.deleteAll();
-        warehouseRepository.deleteAll();
-
-        Material sand = Material.builder()
-                .materialName("Sand")
-                .description("window, and in other staffs")
+        MarketMaterial material = MarketMaterial.builder()
+                .name("Sand")
+                .country(Country.KZ)
+                .price(1000.0)
+                .icon(Icon.SAND)
                 .build();
-        sand = materialRepository.save(sand);
-
-        Warehouse warehouse = Warehouse.builder()
-                .departmentId("1")
-                .build();
-        warehouse = warehouseRepository.save(warehouse);
-
-        MaterialWarehouse materialWarehouse = MaterialWarehouse.builder()
-                .material(sand)
-                .warehouse(warehouse)
-                .available(1000.6)
-                .build();
-
-        materialWarehouse = matWarRepository.save(materialWarehouse);
+        marketMaterialRepository.save(material);
+//        matWarRepository.deleteAll();
+//        materialRepository.deleteAll();
+//        warehouseRepository.deleteAll();
+//
+//        Material sand = Material.builder()
+//                .materialName("Sand")
+//                .description("window, and in other staffs")
+//                .build();
+//        sand = materialRepository.save(sand);
+//
+//        Warehouse warehouse = Warehouse.builder()
+//                .departmentId("1")
+//                .build();
+//        warehouse = warehouseRepository.save(warehouse);
+//
+//        MaterialWarehouse materialWarehouse = MaterialWarehouse.builder()
+//                .material(sand)
+//                .warehouse(warehouse)
+//                .available(1000.6)
+//                .build();
+//
+//        materialWarehouse = matWarRepository.save(materialWarehouse);
 
     }
 }
