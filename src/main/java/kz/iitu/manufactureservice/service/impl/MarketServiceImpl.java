@@ -1,7 +1,8 @@
 package kz.iitu.manufactureservice.service.impl;
 
-import kz.iitu.cfaslib.dto.MarketMaterialDto;
-import kz.iitu.cfaslib.dto.request.MarketFilterRequestDto;
+
+import kz.iitu.cfaslib.dto.manufacture.MarketMaterialDto;
+import kz.iitu.cfaslib.dto.manufacture.request.MarketFilterRequestDto;
 import kz.iitu.manufactureservice.model.MarketMaterial;
 import kz.iitu.manufactureservice.model.enums.Country;
 import kz.iitu.manufactureservice.model.enums.Icon;
@@ -16,6 +17,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -51,7 +53,7 @@ public class MarketServiceImpl implements MarketService {
             }
             return model;
         }
-        return null;
+        throw new NoSuchElementException(String.format("Material with %s id does not exist", id));
     }
 
     @Override

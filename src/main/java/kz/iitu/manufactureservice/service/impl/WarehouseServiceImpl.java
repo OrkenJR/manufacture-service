@@ -1,8 +1,9 @@
 package kz.iitu.manufactureservice.service.impl;
 
-import kz.iitu.cfaslib.dto.MatWarAggregationDto;
-import kz.iitu.cfaslib.dto.MaterialDto;
-import kz.iitu.cfaslib.dto.request.MatWarRequestDto;
+
+import kz.iitu.cfaslib.dto.manufacture.MatWarAggregationDto;
+import kz.iitu.cfaslib.dto.manufacture.MaterialDto;
+import kz.iitu.cfaslib.dto.manufacture.request.MatWarRequestDto;
 import kz.iitu.manufactureservice.model.Material;
 import kz.iitu.manufactureservice.model.MaterialWarehouse;
 import kz.iitu.manufactureservice.repository.MatWarRepository;

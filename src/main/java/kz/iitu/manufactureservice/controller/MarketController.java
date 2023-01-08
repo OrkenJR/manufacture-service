@@ -2,8 +2,8 @@ package kz.iitu.manufactureservice.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kz.iitu.cfaslib.dto.MarketMaterialDto;
-import kz.iitu.cfaslib.dto.request.MarketFilterRequestDto;
+import kz.iitu.cfaslib.dto.manufacture.MarketMaterialDto;
+import kz.iitu.cfaslib.dto.manufacture.request.MarketFilterRequestDto;
 import kz.iitu.manufactureservice.model.MarketMaterial;
 import kz.iitu.manufactureservice.service.MarketService;
 import lombok.RequiredArgsConstructor;

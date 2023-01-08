@@ -1,7 +1,8 @@
 package kz.iitu.manufactureservice.service;
 
-import kz.iitu.cfaslib.dto.MatWarAggregationDto;
-import kz.iitu.cfaslib.dto.request.MatWarRequestDto;
+
+import kz.iitu.cfaslib.dto.manufacture.MatWarAggregationDto;
+import kz.iitu.cfaslib.dto.manufacture.request.MatWarRequestDto;
 
 import java.util.List;
 

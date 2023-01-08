@@ -1,7 +1,8 @@
 package kz.iitu.manufactureservice.service;
 
-import kz.iitu.cfaslib.dto.MarketMaterialDto;
-import kz.iitu.cfaslib.dto.request.MarketFilterRequestDto;
+
+import kz.iitu.cfaslib.dto.manufacture.MarketMaterialDto;
+import kz.iitu.cfaslib.dto.manufacture.request.MarketFilterRequestDto;
 import kz.iitu.manufactureservice.model.MarketMaterial;
 
 import java.util.List;

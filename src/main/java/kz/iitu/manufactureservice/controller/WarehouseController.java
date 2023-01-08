@@ -2,8 +2,9 @@ package kz.iitu.manufactureservice.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kz.iitu.cfaslib.dto.MatWarAggregationDto;
-import kz.iitu.cfaslib.dto.request.MatWarRequestDto;
+
+import kz.iitu.cfaslib.dto.manufacture.MatWarAggregationDto;
+import kz.iitu.cfaslib.dto.manufacture.request.MatWarRequestDto;
 import kz.iitu.manufactureservice.service.WarehouseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

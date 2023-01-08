@@ -1,9 +1,6 @@
 package kz.iitu.manufactureservice.config;
 
 import kz.iitu.manufactureservice.model.MarketMaterial;
-import kz.iitu.manufactureservice.model.Material;
-import kz.iitu.manufactureservice.model.MaterialWarehouse;
-import kz.iitu.manufactureservice.model.Warehouse;
 import kz.iitu.manufactureservice.model.enums.Country;
 import kz.iitu.manufactureservice.model.enums.Icon;
 import kz.iitu.manufactureservice.repository.MarketMaterialRepository;
