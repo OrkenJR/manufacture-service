@@ -6,39 +6,28 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * @author Orken
  * <p>
- * Entity to hold factory info
+ * Entity to hold coords
  **/
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FactoryInfo {
-
+public class GeoPoint {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
-
-    private String name;
-
-    private Integer number;
-
-    private String director;
-
-    private Integer workersCount;
-
-    private Integer departmentCount;
-
-    private Integer year;
-
-    @OneToOne
-    @JoinColumn(name = "geo_id", referencedColumnName = "id")
-    private GeoPoint geoPoint;
-
+    private Double longitude;
+    private Double latitude;
+    @OneToOne(mappedBy = "geoPoint")
+    private FactoryInfo factory;
 }

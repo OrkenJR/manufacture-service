@@ -1,6 +1,7 @@
 package kz.iitu.manufactureservice.service.impl;
 
 import kz.iitu.cfaslib.dto.manufacture.FactoryInfoDto;
+import kz.iitu.cfaslib.dto.manufacture.LightFactoryInfoDto;
 import kz.iitu.manufactureservice.model.FactoryInfo;
 import kz.iitu.manufactureservice.repository.FactoryRepository;
 import kz.iitu.manufactureservice.service.FactoryService;
@@ -23,6 +24,11 @@ public class FactoryServiceImpl implements FactoryService {
     @Override
     public List<FactoryInfo> factoriesByDirector(String director) {
         return factoryRepository.findFactoryInfosByDirector(director);
+    }
+
+    @Override
+    public List<FactoryInfo> findAll() {
+        return factoryRepository.findAll();
     }
 
     @Override
@@ -51,5 +57,17 @@ public class FactoryServiceImpl implements FactoryService {
     @Override
     public void deleteById(String id) {
         factoryRepository.deleteById(id);
+    }
+
+    @Override
+    public LightFactoryInfoDto map(FactoryInfoDto dto) {
+        return modelMapper.map(dto, LightFactoryInfoDto.class);
+    }
+
+    @Override
+    public List<LightFactoryInfoDto> map(List<FactoryInfo> list) {
+        return list.stream()
+                .map(element -> modelMapper.map(element, LightFactoryInfoDto.class))
+                .toList();
     }
 }
